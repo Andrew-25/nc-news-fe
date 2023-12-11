@@ -9,10 +9,12 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path='/' element={<Articles />}></Route>
-        <Route path='/articles/:article_id' element={<ArticlePage />}></Route>
-      </Routes>
+      <div className='page'>
+        <Routes>
+          <Route path='/' element={<Articles />}></Route>
+          <Route path='/articles/:article_id' element={<ArticlePage />}></Route>
+        </Routes>
+      </div>
     </>
   )
 }
