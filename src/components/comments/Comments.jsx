@@ -10,8 +10,6 @@ export default function Comments(props) {
             setComments(res.comments) 
         })
     }, [])
-    
-    console.log(comments)
 
     return (
         <div className="comments">
