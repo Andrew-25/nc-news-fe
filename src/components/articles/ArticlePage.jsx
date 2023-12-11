@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { getArticlesById } from "../../utils/api"
 import ArticleContent from "./ArticleContent"
+import Comments from "../comments/Comments" 
 
 export default function ArticlePage() {    
     const [article, setArticle] = useState([])
@@ -20,6 +21,7 @@ export default function ArticlePage() {
         return (
             <div>
                 <ArticleContent article={article[0]}/>
+                <Comments articleId={articleId}/>
             </div>
         )
     }

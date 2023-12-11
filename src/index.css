@@ -2,8 +2,9 @@
     --dark-green: #77a8a8;
     --light-green: #d9ecd0;
     --pink: #e4d1d1;
-    --dark-pink: #b9b0b0;
+    --blue: #c2d4dd;
     --purple: #b0aac0;
+    --grey: #f0efef;
 }
 
 * {
@@ -39,7 +40,6 @@ h2 {
 
 ul {
     display: block;
-    margin: 5vh 10vw 5vh 10vw;
     border: 2px solid var(--dark-green);
     border-radius: 10px;
     padding: 0;
@@ -53,8 +53,71 @@ li {
     margin: 20px 25px;
 }
 
-li:hover {
+.article-list {
+    margin: 5vh 10vw 5vh 10vw;
+}
+
+.article-card:hover {
     background-color: var(--pink);
+}
+
+.comment-list {
+    margin: 5vh 0vw 5vh 0vw;
+}
+
+.comments {
+    margin: 5vh 5vw 5vh 5vw;
+}
+
+.comment-header {
+    text-decoration: underline;
+    margin: 0 0 10px 0;
+}
+
+.comments form {
+    margin: 0 0 0 5vw;
+}
+
+.comments textarea {
+    display: flex;
+    text-wrap: wrap;
+    border-radius: 10px;
+    border: 2px solid var(--purple);
+    margin: 0 0 10px 0;
+    padding: 10px 15px;
+    width: 400px;
+    height: 130px;
+
+}
+
+.comment-form button {
+    background-color: var(--purple);
+}
+
+.comment-body {
+    margin: 15px 0 15px 15px;
+}
+
+.comment-votes {
+    display: flex;
+    gap: 10px
+}
+
+.comment-votes button {
+    padding: 3px;
+    font-weight: bold;
+    position: relative;
+    bottom: 3px;
+}
+
+.plus:hover {
+    background-color: var(--light-green);
+    border: none;
+}
+
+.minus:hover {
+    background-color: var(--pink);
+    border: none;
 }
 
 .centered {
@@ -66,6 +129,11 @@ button {
     border: none;
     border-radius: 10px;
     padding: 2px 15px;
+    background-color: var(--grey);
+}
+
+button:hover {
+    border: 2px solid white;
 }
 
 .article-content {
@@ -88,7 +156,7 @@ button {
 .article-body {
     margin: 15px;
     border-radius: 10px;
-    background-color: var(--purple);
+    background-color: var(--dark-green);
     padding: 20px;
 }
 
