@@ -98,12 +98,12 @@ li {
     margin: 15px 0 15px 15px;
 }
 
-.comment-votes {
+.votes {
     display: flex;
     gap: 10px
 }
 
-.comment-votes button {
+.votes button {
     padding: 3px;
     font-weight: bold;
     position: relative;
@@ -123,6 +123,12 @@ li {
 .centered {
     display: flex;
     justify-content: center;
+}
+
+.article-author {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
 }
 
 button {
@@ -162,8 +168,4 @@ button:hover {
 
 .article-content button {
     margin: 0 0 15px 0;
-}
-
-.article-author-date {
-    margin: 0  0  0 35px;
 }

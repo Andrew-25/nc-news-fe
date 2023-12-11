@@ -13,3 +13,8 @@ const getRequest = async (path) => {
 export const getArticles = () => getRequest(`articles`)
 export const getArticlesById = (id) => getRequest(`articles/${id}`)
 export const getArticleComments = (id) => getRequest(`articles/${id}/comments`)
+
+export const patchArticle = async (id, votes) => {
+    const result = await instance.patch(`articles/${id}`, {inc_votes: votes})
+    return result.data
+}
