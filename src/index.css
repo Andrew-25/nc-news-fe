@@ -57,3 +57,29 @@ button {
     border-radius: 10px;
     padding: 2px 15px;
 }
+
+.article-content {
+    margin: 5vh 5vw 5vh 5vw;
+    border: 2px solid #77a8a8;
+    border-radius: 10px;
+    padding: 0;
+}
+
+.article-content h2 {
+    margin: 15px;
+}
+
+.article-content img {
+    margin: 15px;
+}
+
+.article-content p {
+    margin: 15px;
+    border-radius: 10px;
+    background-color: #b0aac0;
+    padding: 20px;
+}
+
+.article-content button {
+    margin: 0 0 15px 0;
+}

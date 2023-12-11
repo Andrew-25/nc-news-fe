@@ -5,9 +5,10 @@ const instance = axios.create({
     timeout: 1000
 })
 
-export function getArticles() {
-    return instance.get(`articles`)
-        .then((res) => {
-            return res.data
-        })
+const getRequest = async (path) => {
+    const result = await instance.get(path)
+    return result.data
 }
+
+export const getArticles = () => getRequest(`articles`)
+export const getArticlesById = (id) => getRequest(`articles/${id}`)
