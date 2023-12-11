@@ -1,1 +1,59 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+}
 
+/* #e4d1d1 pink
+#b9b0b0
+#d9ecd0 light-green
+#77a8a8 dark-green
+#b0aac0 purple*/
+
+body {
+    background-color: #d9ecd0;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #77a8a8;
+    margin: 0;
+    height: 60px;
+}
+
+h1.header {
+    justify-content: center;
+    align-content: center;
+}
+
+ul {
+    display: block;
+    margin: 5vh 10vw 5vh 10vw;
+    border: 2px solid #77a8a8;
+    border-radius: 10px;
+    padding: 0;
+    list-style-type: none;
+}
+
+li {
+    border-radius: 10px;
+    background-color: #b0aac0;
+    padding: 20px;
+    margin: 20px 25px;
+}
+
+.centered-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 2px 15px;
+}
