@@ -98,31 +98,37 @@ li {
     margin: 15px 0 15px 15px;
 }
 
-.comment-votes {
+.votes {
     display: flex;
     gap: 10px
 }
 
-.comment-votes button {
+.votes button {
     padding: 3px;
     font-weight: bold;
     position: relative;
     bottom: 3px;
 }
 
-.plus:hover {
+.plus:hover, .plus.clicked {
     background-color: var(--light-green);
-    border: none;
+    border: 0.5px solid black;
 }
 
-.minus:hover {
+.minus:hover, .minus.clicked {
     background-color: var(--pink);
-    border: none;
+    border: 0.5px solid black;
 }
 
 .centered {
     display: flex;
     justify-content: center;
+}
+
+.article-author {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 15px;
 }
 
 button {
@@ -162,8 +168,4 @@ button:hover {
 
 .article-content button {
     margin: 0 0 15px 0;
-}
-
-.article-author-date {
-    margin: 0  0  0 35px;
 }
