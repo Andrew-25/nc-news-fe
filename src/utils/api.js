@@ -12,3 +12,4 @@ const getRequest = async (path) => {
 
 export const getArticles = () => getRequest(`articles`)
 export const getArticlesById = (id) => getRequest(`articles/${id}`)
+export const getArticleComments = (id) => getRequest(`articles/${id}/comments`)
