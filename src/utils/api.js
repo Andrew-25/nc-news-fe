@@ -27,3 +27,5 @@ export const postComment = async (id, user, comment) => {
     const result = await instance.post(`articles/${id}/comments`, commentInfo)
     return result.data
 }
+
+export const deleteComment = (id) => instance.delete(`comments/${id}`)

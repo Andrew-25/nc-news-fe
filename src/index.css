@@ -84,6 +84,10 @@ li {
     margin: 1vh 0vw 5vh 0vw;
 }
 
+.comment-deleted h4 {
+    margin: 0;
+}
+
 .comments {
     margin: 5vh 5vw 5vh 5vw;
 }
@@ -128,6 +132,11 @@ li {
     position: relative;
     bottom: 3px;
     z-index: 0;
+}
+
+.votes-delete {
+    display: flex;
+    justify-content: space-between;
 }
 
 .plus:hover, .plus.clicked {
