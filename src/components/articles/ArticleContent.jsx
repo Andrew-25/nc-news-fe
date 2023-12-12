@@ -7,6 +7,7 @@ export default function ArticleContent(props) {
     const [totalVotes, setTotalVotes] = useState(article.votes)
 
     const vote = async (inc) => {
+        setTotalVotes(totalVotes + inc)
         const res = await patchArticle(article.article_id, inc)
         setTotalVotes(res.article.votes)
     }
