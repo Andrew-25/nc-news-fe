@@ -5,15 +5,17 @@ import CommentCards from "./CommentCards"
 export default function Comments(props) {
     const [comments, setComments] = useState([])
     const [newComment, setNewComment] = useState('')
-    const [commentPosted, setCommentPosted] = useState(false)
-    const [canPost, setCanPost] = useState(true)
+    const [canPost, setCanPost] = useState(false)
 
     useEffect(() => {
         getArticleComments(props.articleId).then((res) => {
             setComments(res.comments)
-            setCanPost(true)
         })
-    }, [commentPosted])
+    }, [])
+
+    useEffect(() => {
+        newComment ? setCanPost(true) : setCanPost(false)
+    }, [newComment])
 
     const handleChange = (event) => setNewComment(event.target.value)
 
@@ -21,8 +23,8 @@ export default function Comments(props) {
         event.preventDefault()
         if (canPost) {
             setCanPost(false)
-            postComment(props.articleId, 'happyamy2016', newComment).then(() => {
-                commentPosted ? setCommentPosted(false) : setCommentPosted(true)
+            postComment(props.articleId, 'happyamy2016', newComment).then((res) => {
+                setComments([res.comments[0], ...comments])
                 setNewComment('')
             })
         }

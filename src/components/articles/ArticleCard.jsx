@@ -11,6 +11,9 @@ export default function ArticleCard(props) {
             <h3>{article.title}</h3>
             <p>by {article.author} at {dateTime(article.created_at)}</p>
             <p>Topic: {article.topic}</p>
+            <div className="centered">
+                <button>click for article</button>
+            </div>
         </li>
     )
 }
