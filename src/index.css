@@ -110,14 +110,14 @@ li {
     bottom: 3px;
 }
 
-.plus:hover {
+.plus:hover, .plus.clicked {
     background-color: var(--light-green);
-    border: none;
+    border: 0.5px solid black;
 }
 
-.minus:hover {
+.minus:hover, .minus.clicked {
     background-color: var(--pink);
-    border: none;
+    border: 0.5px solid black;
 }
 
 .centered {

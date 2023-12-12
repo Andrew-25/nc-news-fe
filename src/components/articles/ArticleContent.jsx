@@ -2,14 +2,18 @@ import { useEffect, useState } from "react"
 import { patchArticle } from "../../utils/api"
 import { dateTime } from "../../utils/utils"
 
-export default function ArticleContent(props) {
-    const {article} = props
+export default function ArticleContent({article}) {
     const [totalVotes, setTotalVotes] = useState(article.votes)
+    const [hasVoted, setHasVoted] = useState(false)
 
-    const vote = async (inc) => {
-        setTotalVotes(totalVotes + inc)
-        const res = await patchArticle(article.article_id, inc)
-        setTotalVotes(res.article.votes)
+    const vote = async (event, inc) => {
+        setHasVoted(true)
+        if (!hasVoted) {
+            event.target.classList.add('clicked')
+            setTotalVotes(totalVotes + inc)
+            const res = await patchArticle(article.article_id, inc)
+            setTotalVotes(res.article.votes)
+        }
     }
 
     return (
@@ -26,8 +30,8 @@ export default function ArticleContent(props) {
             <div className="centered">
                 <div className="votes">
                     <p>Votes: {totalVotes}</p>
-                    <button onClick={() => vote(1)} className="plus">++</button>
-                    <button onClick={() => vote(-1)} className="minus">--</button>
+                    <button onClick={(e) => vote(e, 1)} className="plus">++</button>
+                    <button onClick={(e) => vote(e, -1)} className="minus">--</button>
                 </div>
             </div>
         </div>
