@@ -21,6 +21,10 @@ h2 {
     margin: 30px 0 0 0;
 }
 
+h4 {
+    margin: 35px 0 0 0;
+}
+
 .header {
     position: fixed;
     display: flex;
@@ -62,7 +66,7 @@ li {
 }
 
 .comment-list {
-    margin: 5vh 0vw 5vh 0vw;
+    margin: 1vh 0vw 5vh 0vw;
 }
 
 .comments {
@@ -75,7 +79,7 @@ li {
 }
 
 .comments form {
-    margin: 0 0 0 5vw;
+    margin: 0 0 25px 5vw;
 }
 
 .comments textarea {

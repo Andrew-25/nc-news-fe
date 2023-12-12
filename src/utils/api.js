@@ -18,3 +18,12 @@ export const patchArticle = async (id, votes) => {
     const result = await instance.patch(`articles/${id}`, {inc_votes: votes})
     return result.data
 }
+
+export const postComment = async (id, user, comment) => {
+    const commentInfo = {
+        username: user,
+        body: comment,
+    }
+    const result = await instance.post(`articles/${id}/comments`, commentInfo)
+    return result.data
+}
