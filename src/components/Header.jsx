@@ -1,3 +1,13 @@
+import { useNavigate } from "react-router-dom"
+
 export default function Header() {
-    return <h1 className="header">NC News</h1>
+    let navigate = useNavigate()
+    
+    const returnHome = () => navigate('/')
+
+    return (
+        <div onClick={returnHome} className="header">
+            <h1 >NC News</h1>
+        </div>
+    )
 } 
