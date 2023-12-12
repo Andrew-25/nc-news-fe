@@ -3,16 +3,17 @@ import { deleteComment } from "../../utils/api"
 import { dateTime } from "../../utils/utils"
 
 export default function CommentCards({comment}) {
-    const [canBeDeleted, setCanBeDeleted] = useState(true)
+    const [hasBeenDeleted, setHasBeenDeleted] = useState(false)
+    const signedInUser = 'happyamy2016'
 
     const handleDelete = (id) => {
-        if (canBeDeleted) {
+        if (comment.author === signedInUser) {
             deleteComment(id)
+            setHasBeenDeleted(true)
         }
-        setCanBeDeleted(false)
     }
 
-    if (!canBeDeleted) {
+    if (hasBeenDeleted) {
         return (
             <li className="comment-deleted">
                 <h4>Comment deleted</h4>
