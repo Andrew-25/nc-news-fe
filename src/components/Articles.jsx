@@ -13,9 +13,7 @@ export default function Articles() {
         })
     }, [])
 
-    if (isLoading) {
-        return <h2>Loading ...</h2>
-    }
+    if (isLoading) return <h2>Loading ...</h2>
 
     return (
         <ul className="article-list">

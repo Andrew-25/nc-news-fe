@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { patchArticle } from "../../utils/api"
 import { dateTime } from "../../utils/utils"
 
@@ -12,6 +12,12 @@ export default function ArticleContent({article}) {
             event.target.classList.add('clicked')
             setTotalVotes(totalVotes + inc)
             const res = await patchArticle(article.article_id, inc)
+            setTotalVotes(res.article.votes)
+        } else if (event.target.classList.contains('clicked')) {
+            setHasVoted(false)
+            event.target.classList.remove('clicked')
+            setTotalVotes(totalVotes - inc)
+            const res = await patchArticle(article.article_id, - inc)
             setTotalVotes(res.article.votes)
         }
     }

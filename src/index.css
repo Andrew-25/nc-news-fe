@@ -13,7 +13,7 @@
 }
 
 body {
-    background-color: #d9ecd0;
+    background-color: var(--light-green);
 }
 
 h2 {
@@ -36,10 +36,25 @@ h4 {
     margin: 0;
     height: 60px;
     top: 0;
+    z-index: 1;
+}
+
+.topics {
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: var(--grey);
+    margin: 0;
+    height: 40px;
+    top: 60px;
+    z-index: 1;
 }
 
 .page {
-    margin-top: 80px;
+    margin-top: 120px;
 }
 
 ul {
@@ -112,6 +127,7 @@ li {
     font-weight: bold;
     position: relative;
     bottom: 3px;
+    z-index: 0;
 }
 
 .plus:hover, .plus.clicked {

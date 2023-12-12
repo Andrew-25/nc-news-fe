@@ -15,15 +15,13 @@ export default function ArticlePage() {
         })
     }, [])
 
-    if (article.length === 0) {
-        return <h2>Loading ...</h2>
-    } else {
-        return (
-            <div>
-                <ArticleContent article={article[0]}/>
-                <Comments articleId={articleId}/>
-            </div>
-        )
-    }
+    if (article.length === 0) return <h2>Loading ...</h2>
 
+    return (
+        <div>
+            <ArticleContent article={article[0]}/>
+            <Comments articleId={articleId}/>
+        </div>
+    )
+    
 }
