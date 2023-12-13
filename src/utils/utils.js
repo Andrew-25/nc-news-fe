@@ -5,3 +5,5 @@ export const dateTime = (UTC) => {
 
     return 'at ' + timeString + ' on ' + dateString
 }
+
+export const capsInitial = (name) => name.slice(0, 1).toUpperCase() + name.slice(1)

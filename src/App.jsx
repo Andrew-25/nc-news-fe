@@ -15,6 +15,7 @@ function App() {
       <div className='page'>
         <Routes>
           <Route path='/' element={<Articles />}></Route>
+          <Route path='/articles' element={<Articles />}></Route>
           <Route path='/articles/:article_id' element={<ArticlePage />}></Route>
           <Route path='/users' element={<Users />}></Route>
         </Routes>

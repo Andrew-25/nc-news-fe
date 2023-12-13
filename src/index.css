@@ -45,13 +45,33 @@ h4 {
     width: 100vw;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 10px;
     align-content: center;
     background-color: var(--grey);
     margin: 0;
     height: 40px;
     top: 60px;
     z-index: 1;
+    padding: 0 0 0 10px;
 }
+
+.topic-card {
+    border: 2px solid var(--purple);
+    border-radius: 10px;
+    padding: 2px 5px;
+    text-decoration: none;
+}
+
+.topic-card:visited {
+    color: var(--purple);
+}
+
+.topic-card:hover {
+    text-decoration: underline;
+    background-color: var(--purple);
+    color: white;
+}
+
 
 .page {
     margin-top: 120px;
