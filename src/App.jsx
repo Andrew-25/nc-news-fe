@@ -1,21 +1,21 @@
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useSearchParams } from 'react-router-dom'
 import Header from './components/Header'
 import Articles from './components/Articles'
 import ArticlePage from './components/articles/ArticlePage'
 import Topics from './components/Topics'
 import Users from './components/Users'
+import Filters from './components/Filters'
 
 function App() {
-
   return (
     <>
       <Header />
       <Topics />
       <div className='page'>
         <Routes>
-          <Route path='/' element={<Articles />}></Route>
-          <Route path='/articles' element={<Articles />}></Route>
+          <Route path='/' element={<><Articles /><Filters /></>} ></Route>
+          <Route path='/articles' element={<><Articles /><Filters /></>}></Route>
           <Route path='/articles/:article_id' element={<ArticlePage />}></Route>
           <Route path='/users' element={<Users />}></Route>
         </Routes>

@@ -6,19 +6,25 @@ import ArticleCard from "./articles/ArticleCard"
 export default function Articles() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    const [category, setCategory] = useState('')
+
+    const [topicQuery, setTopicQuery] = useState('')
+    const [sortQuery, setSortQuery] = useState('')
+    const [orderQuery, setOrderQuery] = useState('')
+
     const [url] = useSearchParams()
 
     useEffect(() => {
-        setCategory(url.get('topic'))
+        setTopicQuery(url.get('topic'))
+        setSortQuery(url.get('sort'))
+        setOrderQuery(url.get('order'))
     }, [url])
 
     useEffect(() => {
-        getArticles(category).then((res) => {
+        getArticles(topicQuery, sortQuery, orderQuery).then((res) => {
             setArticles(res.articles)
         })
         setIsLoading(false)
-    }, [category])
+    }, [topicQuery, sortQuery, orderQuery])
 
     if (isLoading) return <h2>Loading ...</h2>
 
