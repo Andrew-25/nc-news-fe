@@ -5,16 +5,15 @@ const instance = axios.create({
     timeout: 1000
 })
 
-const getRequest = async (path) => {
-    const result = await instance.get(path)
+const getRequest = async (path, params) => {
+    const result = await instance.get(path, params)
     return result.data
 }
 
-export const getArticles = () => getRequest(`articles`)
+export const getArticles = (topic) => getRequest(`articles`, {params: { topic: topic }})
 export const getArticlesById = (id) => getRequest(`articles/${id}`)
 export const getArticleComments = (id) => getRequest(`articles/${id}/comments`)
 export const getTopics = () => getRequest(`topics`)
-export const getArticlesByTopic = (topic) => getRequest(`articles?topic=${topic}`)
 
 export const patchArticle = async (id, votes) => {
     const result = await instance.patch(`articles/${id}`, {inc_votes: votes})

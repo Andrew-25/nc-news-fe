@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getArticles, getArticlesByTopic } from "../utils/api"
+import { getArticles } from "../utils/api"
 import { useSearchParams } from "react-router-dom"
 import ArticleCard from "./articles/ArticleCard"
 
@@ -11,18 +11,12 @@ export default function Articles() {
 
     useEffect(() => {
         setCategory(url.get('topic'))
-    })
+    }, [url])
 
     useEffect(() => {
-        if (category) {
-            getArticlesByTopic(category).then((res) => {
-                setArticles(res.articles)
-            })
-        } else {
-            getArticles().then((res) => {
-                setArticles(res.articles)
-            })
-        }
+        getArticles(category).then((res) => {
+            setArticles(res.articles)
+        })
         setIsLoading(false)
     }, [category])
 
