@@ -21,6 +21,16 @@ export default function CommentCards({comment}) {
         )
     }
 
+    const deleteButton = () => {
+        if (comment.author === signedInUser) {
+            return (
+                <div className="delete">
+                    <button onClick={() => handleDelete(comment.comment_id)}>Delete</button>
+                </div>
+            )
+        }
+    }
+
     return (
         <li className="comment-card">
             <h3>{comment.author}</h3>
@@ -32,9 +42,7 @@ export default function CommentCards({comment}) {
                     <button className="plus">++</button>
                     <button className="minus">--</button>
                 </div>
-                <div className="delete">
-                    <button onClick={() => handleDelete(comment.comment_id)}>Delete</button>
-                </div>
+                {deleteButton()}
             </div>
         </li>
     )
