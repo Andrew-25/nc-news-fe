@@ -9,7 +9,7 @@ export default function ArticleCard({article}) {
         <li className="article-card" onClick={() => handleClick(article.article_id)}>
             <h3>{article.title}</h3>
             <p>by {article.author} {dateTime(article.created_at)}</p>
-            <p>Topic: {article.topic}</p>
+            <p>Topic: {article.topic} - Votes: {article.votes} - Comments: {article.comment_count}</p>
             <div className="centered">
                 <button>click for article</button>
             </div>

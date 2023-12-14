@@ -10,9 +10,13 @@ const getRequest = async (path, params) => {
         return result.data
 }
 
-export const getArticles = (topic) => {
-    if (topic) return getRequest(`articles`, {params: { topic: topic }})
-    else return getRequest(`articles`)
+export const getArticles = (topic, sort, order) => {
+    const queries = {params: {}}
+    if (topic) queries.params.topic = topic
+    if (sort) queries.params.sort = sort
+    if (order) queries.params.order = order
+    
+    return getRequest(`articles`, queries)
 }
 
 export const getArticlesById = (id) => getRequest(`articles/${id}`)

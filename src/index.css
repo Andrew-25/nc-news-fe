@@ -55,6 +55,81 @@ h4 {
     padding: 0 0 0 10px;
 }
 
+.filters {
+    color: var(--purple);
+    position: fixed;
+    display: flex;
+    top: 100px;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    align-content: center;
+    background-color: var(--grey);
+    margin: 0;
+    height: 30px;
+    top: 95px;
+    z-index: 1;
+    padding: 0 0 0 10px;
+}
+
+.sort select {
+    margin: 0 0 0 5px;
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    position: relative;
+    bottom: 1px;
+    color: var(--purple);
+}
+
+.sort select:hover {
+    text-decoration: underline;
+    background-color: var(--pink);
+    color: white;
+}
+
+.order {
+    position: relative;
+    bottom: 2px;
+}
+
+.order input {
+    position: relative;
+    top: 2px;
+    margin: 0 2px 0 5px;
+}
+
+input[type='radio'] {
+    appearance: none;
+    color: var(--purple);
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+}
+
+input[type='radio']:hover {
+    background-color: var(--pink);
+}
+
+input[type='radio']:checked {
+    background-color: var(--purple);
+}
+
+.filter-submit {
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    position: relative;
+    bottom: 2px;
+    color: var(--purple);
+}
+
+.filter-submit:hover {
+    text-decoration: underline;
+    background-color: var(--pink);
+    color: white;
+}
+
 .topic-card {
     border: 2px solid var(--purple);
     border-radius: 10px;
@@ -74,7 +149,7 @@ h4 {
 
 
 .page {
-    margin-top: 120px;
+    margin-top: 145px;
 }
 
 ul {
