@@ -6,8 +6,12 @@ const instance = axios.create({
 })
 
 const getRequest = async (path, params) => {
-        const result = await instance.get(path, params)
-        return result.data
+    try {
+        const res = await instance.get(path, params)
+        return res.data
+    } catch ({response}) {
+        throw response.data
+    }
 }
 
 export const getArticles = (topic, sort, order) => {
