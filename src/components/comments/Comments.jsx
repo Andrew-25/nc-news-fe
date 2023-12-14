@@ -14,7 +14,7 @@ export default function Comments(props) {
     }, [])
 
     useEffect(() => {
-        newComment ? setCanPost(true) : setCanPost(false)
+        newComment.trim() ? setCanPost(true) : setCanPost(false)
     }, [newComment])
 
     const handleChange = (event) => setNewComment(event.target.value)
