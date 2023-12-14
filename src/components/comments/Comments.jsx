@@ -14,7 +14,7 @@ export default function Comments(props) {
     }, [])
 
     useEffect(() => {
-        newComment ? setCanPost(true) : setCanPost(false)
+        newComment.trim() ? setCanPost(true) : setCanPost(false)
     }, [newComment])
 
     const handleChange = (event) => setNewComment(event.target.value)
@@ -35,7 +35,7 @@ export default function Comments(props) {
             <h3 className="comment-header">Comments:</h3>
             <form onSubmit={handleSubmit} className="comment-form">
                 <textarea type="text" placeholder="Your comment here ..." onChange={handleChange} value={newComment}/>
-                <button>Add comment</button>
+                <button hidden={!canPost}>Add comment</button>
             </form>
             <h4>Showing {comments.length} comments.</h4>
             <ul className="comment-list">
